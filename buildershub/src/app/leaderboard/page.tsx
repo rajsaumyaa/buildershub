@@ -16,7 +16,7 @@ export default function Leaderboard() {
   const [message, setMessage] = useState("");
 
   const fetchLeaderboard = async () => {
-    const res = await fetch("http://localhost:8000/leaderboard");
+    const res = await fetch("https://buildershub-api.onrender.com/leaderboard");
     const json = await res.json();
     setData(json);
     setLoading(false);
@@ -27,7 +27,7 @@ export default function Leaderboard() {
   const handleRegister = async () => {
     setRegistering(true);
     setMessage("");
-    const res = await fetch("http://localhost:8000/users/register", {
+    const res = await fetch("https://buildershub-api.onrender.com/users/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),

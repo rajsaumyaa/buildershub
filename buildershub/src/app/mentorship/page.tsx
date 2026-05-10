@@ -12,7 +12,7 @@ export default function Mentorship() {
   const handleSubmit = async () => {
     setLoading(true);
     setReview("");
-    const res = await fetch("http://localhost:8000/agents/mentor", {
+    const res = await fetch("https://buildershub-api.onrender.com/agents/mentor", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
